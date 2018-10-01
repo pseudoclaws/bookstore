@@ -30,8 +30,8 @@ module Bookstore
       route_param :id do
         put jbuilder: 'stores/sold_books' do
           @result = MarkBookAsSold.call(
-            store: Store.find(params[:id]),
-            book: Book.find(params[:book_id]),
+            store:  Store.find(params[:id]),
+            book:   Book.find(params[:book_id]),
             amount: params[:amount]
           )
           status :unprocessable_entity if @result.failure?
