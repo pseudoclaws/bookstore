@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "required": ["shops"],
+  "properties": {
+    "shops" : {
+      "type" : "array",
+      "items": {
+        "required" : [
+          "id",
+          "name",
+          "books_sold_count",
+          "books_in_stock"
+        ],
+        "properties" : {
+          "id" : { "type" : "integer" },
+          "name" : { "type" : "string" },
+          "books_sold_count" : { "type" : "integer" },
+          "books_in_stock": {
+            "type" : "array",
+            "items": {
+              "required" : [
+                "id",
+                "title",
+                "copies_in_stock"
+              ],
+              "properties" : {
+                "id": {
+                  "type": "integer"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "copies_in_stock": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
